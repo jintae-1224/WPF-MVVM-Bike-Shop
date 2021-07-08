@@ -1,0 +1,33 @@
+﻿<Page x:Class="MVVM2.ProductsManagement"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MVVM2"
+      mc:Ignorable="d" d:DesignWidth="520"
+      Title="ProductsManagement" Width="608.403" Height="340.336">
+
+    <Grid Margin="0,0,10,0">
+        <Label Content="Search : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="25" Margin="83,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="460" TextChanged="TextBox_TextChanged"/>
+        <DataGrid x:Name="ddataGrid" HorizontalAlignment="Left" Height="271" Margin="10,59,0,0" VerticalAlignment="Top" Width="345"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="271" Margin="379,59,0,0" VerticalAlignment="Top"
+                Width="164" Background="#FFF9F7F7"
+                DataContext="{Binding SelectedItem, ElementName=ddataGrid}">
+
+            <StackPanel Margin="10">
+                <TextBlock Text="Stock Serch" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="10"/>
+                <TextBlock Text="종목"/>
+                <TextBox Text="{Binding Title, Mode=TwoWay}"/>
+                <TextBlock Text="가격"/>
+                <TextBox Text="{Binding Price, Mode=TwoWay}"/>
+                <TextBlock Text="업종,테마"/>
+                <TextBox Text="{Binding Color, Mode=TwoWay}"/>
+                <Border Background="{Binding Color}" Height="10"/>
+                <TextBlock Text="{Binding Reference, Mode=TwoWay}"/>
+            </StackPanel>
+
+        </Border>
+
+    </Grid>
+</Page>
